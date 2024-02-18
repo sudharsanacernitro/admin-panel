@@ -1,0 +1,3 @@
+I am gladfully express my feelings in building this website ,This is an admin panel for an e-commerse website for photo frame ordering ,This admin panel works on web-socket for real-time updating of users and ordering details to 
+the admin.As it uses web-socket it normally upgraded to 443 which is https for safe and secure transmission.In this admin we can create an gallery folder for default images in e-commerse website and we can also add the photos to the
+galley images.I am very proud that I make this website online on my own...So my knowledge about devops become little bit higher and check our website at this url: https://airmagicorder.com and https://main.airmagicorder.com
