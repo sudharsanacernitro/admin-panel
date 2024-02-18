@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en" dir="ltr">
+<head>
+
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<style>@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+  
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 20px 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.nav-links li{
+  list-style: none;
+  margin: 0 12px;
+}
+.nav-links li a{
+  position: relative;
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 6px 0;
+  text-decoration: none;
+}
+.nav-links li a:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: black;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+}
+.nav-links li a:hover:before{
+  width: 100%;
+}
+button {
+  cursor: pointer;
+  padding: 0 6px;
+  min-width: 88px;
+  min-height: 36px;
+}
+
+.controls {
+  padding: 24px;
+}
+
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-dialog {
+  width: 70vmin;
+  height: 70vmin;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 70%;
+  background-color:black;
+
+ background-size: contain;
+    /* Other styles for your div */
+     background-size: contain;
+    /* Other styles for your div */
+    width: 100%; /* Set the width of the div */
+
+  border-radius: 30px;
+}
+
+.modal-polygon {
+  fill: #FF5858;
+}
+
+.modal-content {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding: 24px;
+  visibility: hidden;
+  opacity: 0;
+  color: white;
+}
+
+
+#Id {
+      position: relative;
+  display: block;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  width: 1000px;
+  border: 5px solid black;
+  cursor: pointer;
+  /* Add transition for a smooth effect */
+  transition: background-color 0.3s ease-in-out;
+  /* Add background image */
+  background-image: url('output.png');
+  background-size: cover; /* Cover the entire div */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-color: grey; /* Change to grey on hover */
+  }
+ #Id:hover {
+      background-color: #FF5858; /* Change the background color on hover */
+      /* Or add another effect, for example, a box-shadow */
+      /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+      transform: translateY(-5px);  
+    }
+
+#messages
+{
+            justify-content: center;
+            align-items: center;
+        background-color: white;
+              overflow-y: scroll; /* Show vertical scrollbar */
+               width: fit-content; /* Automatically adjust width based on content */
+      margin: 0 auto; /* Center the div */
+      padding: 20px; /* Optional padding for better appearance */
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  /* Optionally, you can add more styles such as font color, font family, etc. */
+  color: #333; /* Example text color */
+  background-image: url('');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+ #detail {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 100px;
+      margin-top: 50px;
+        padding-top: 50px;
+        padding-right:10px;
+    }
+     #email {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 100px;
+      margin-top: 100px;
+        padding-top: 50px;
+        padding-left:100px;
+    }
+    .button1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 170px;
+      margin-top: 200px;
+        
+    }
+    .button2
+    {
+    position: absolute;
+      top: 0;
+      right: 0;
+      margin-right:75px;
+      margin-top: 200px;
+}
+button
+{ background-color: black;
+  color: #fff;
+  padding: 230px 1 0px;
+  margin:10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+body {
+    font-family: montserrat;
+        background-color: white;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+
+    min-height: 10vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.swipe {
+    position: relative;
+    width: fit-content;
+}
+
+.swipe::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    width: 0%;
+    height: 100%;
+    background-color: #FF5858;
+    animation: swipe 1.5s ease-out 1s forwards;
+}
+
+.swipe--delay::after {
+    background-color: #FFF;
+    animation-delay: 1.5s;
+}
+
+h1,
+h3 {
+    display: block;
+    color: black;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 15px 25px;
+    opacity: 0;
+}
+
+h1 {
+    font-size: 72px;
+    line-height: 1;
+    animation: fade 0.01s ease-out 1.75s forwards;
+}
+
+h3 {
+    font-size: 32px;
+    line-height: 1;
+    animation: fade 0.01s ease-out 2.25s forwards;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes swipe {
+    0% {
+        right: 100%;
+        left: 0;
+        width: 0%;
+    }
+    50% {
+        right: 0;
+        left: 0;
+        width: 100%;
+    }
+    100% {
+        right: 0;
+        left: 100%;
+        width: 0%;
+    }
+}
+
+
+
+
+#ButtonId {
+  position: absolute;
+  top:240px;
+  bottom: 75px; /* Adjust the distance from the bottom */
+  right: 175px; /* Adjust the distance from the right */
+  background-color: black;
+  color: #fff;
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#ButtonId:hover {
+  background-color: grey;
+}
+
+.user-box {
+position: absolute;
+  top:175px;
+    left: 100px; /* Adjust the distance from the right */
+
+      
+    }
+    #label
+{
+display:block;
+width:100px;
+background:#e3362c;
+color:#fff;
+padding:10px;
+
+border-radius:5px;
+cursor: pointer;
+position:relative;
+left:30px;
+top:50px;
+}
+#imageInput
+{
+display:none;
+}
+</style>
+
+</head>
+<body>
+
+<section id="modal-1" class="modal-container">
+  
+  <div class="modal-dialog" id="modal">    
+    <svg class="modal-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <polygon class="modal-polygon" />
+    </svg>
+    
+    
+  </div>
+</section>
+
+
+<div>
+<center>
+<div class="wrapper">
+ <div class="swipe">
+  <h1>AIRMAGIC</h1>
+   </div> </div></center>
+<ul class="nav-links">
+    <li><a href="#" onClick="reloadPage()">Reload</a></li>
+    <li ><a href="#" onClick="p('popup')">Upload</a></li>
+    <li ><a href="#" onClick="p('upload')">New-Category</a></li>
+  </ul>
+
+
+      <div id="upload" class="modal-content">
+      
+ <center>
+<div class="login-box">
+  <h2>Upload</h2>
+
+    <div class="user-box">
+          <label>Category-Name:  </label>
+    <input type="name" id="category-name" >
+<label for="imageInput" id="label">Select-IMG</label>
+                    <input type="file" id="imageInput" accept="image/*" >
+      
+    </div>
+
+                    
+    <button onclick="handleImage()" id="ButtonId">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Upload
+    </button>
+
+</div>
+<center>
+    
+  </div>
+   <div id="popup" class="modal-content">
+   <center>
+<div class="login-box">
+  <h2>New-Category</h2>
+
+    <div class="user-box">
+          <label>Category-Name:  </label>
+    <input type="name" id="category" >
+
+    </div>
+   
+    <button onclick="submit()" id="ButtonId">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Create
+    </button>
+
+</div>
+<center>
+</div>
+  <div id="messages"></div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script>
+
+  <script>
+  
+
+  let f=0;
+  let v;
+    const webSocket = new WebSocket('ws://localhost:443/');
+    webSocket.onmessage = (event) => {
+      console.log(event)
+      let f=JSON.parse(event.data);
+            console.log(f.name);
+       if(f.name!="download"){     
+
+      let content=f.bin;  //f.bin is the binary image  
+      const uint8Array = new Uint8Array(content.data);
+      const imageBlob = new Blob([uint8Array], { type: 'image/png' });
+      console.log(uint8Array);
+const imageUrl=URL.createObjectURL(imageBlob);
+console.log("bin-length:"+imageBlob);
+//const base64Image = btoa(String.fromCharCode.apply(null, content.data));
+//const dataURL = `data:image/png;base64,${base64Image}`;
+
+      var elements = document.getElementsByClassName(f.emailId);
+    //const imgElement = document.createElement('img');
+    const imgElement = new Image();
+    imgElement.src = imageUrl;
+    imgElement.width = 200;
+    imgElement.height = 200;
+     imgElement.style.border = "2px solid black";
+imgElement.style.borderRadius = "10px";
+imgElement.style.margin = "10px";
+
+if(elements.length===0){
+     // document.body.innerHTML=(elements.length);
+            var newDiv=document.createElement("div");
+
+// Create an <img> element and set its source otpnglob's URL
+var button=document.createElement("button");
+    button.textContent = "download";
+        button.setAttribute("onclick", "myFunction(this)");
+            button.setAttribute("id",f.emailId);
+                        button.setAttribute("class","button1");
+            
+        var button1=document.createElement("button");
+    button1.textContent = "remove";
+        button1.setAttribute("onclick", "remove(this)");
+            button1.setAttribute("id",f.emailId);
+            button1.setAttribute("class","button2");
+                        
+    var paragraph = document.createElement("h4");
+        var div = document.createElement("div");
+    paragraph.innerText = "NAME: "+f.name;
+    paragraph.setAttribute("id","detail");
+    newDiv.appendChild(paragraph);
+    var email = document.createElement("h4");
+    email.innerText = "EMAIL:  "+f.emailId;
+    email.setAttribute("id","email");
+   newDiv.appendChild(button);
+      newDiv.appendChild(button1);
+    newDiv.appendChild(email);
+    
+    
+div.appendChild(imgElement);
+newDiv.appendChild(div);
+newDiv.setAttribute("id","Id")
+newDiv.setAttribute("class", f.emailId);
+//newDiv.setAttribute("onclick","handleClick(this)");
+//newDiv.setAttribute("class","col-sm-7")
+// Append the <img> element to the HTML document
+document.getElementById("messages").appendChild(newDiv);
+
+}
+
+else{
+ //imgElement.style.left = "100px"; // Adjust the left position as needed
+    //imgElement.style.padding = "20px"; // Adjust the top position as needed
+
+elements[0].appendChild(imgElement);
+
+}
+// Don't forget to revoke the Blob URL when you're done with the image
+//URL.revokeObjectURL(dataURL);
+}
+
+else if(f.name==="download"){
+console.log(f.emailId);
+
+let contentbin=f.bin;
+console.log(contentbin.data);
+  const uint8Arrays = new Uint8Array(contentbin.data);
+      // Convert binary array to Uint8Array
+
+
+      // Convert Uint8Array to Blob
+      var blob = new Blob([uint8Arrays], { type: 'application/zip' });
+
+      // Create a download link
+      var downloadLink = document.createElement('a');
+      downloadLink.href = URL.createObjectURL(blob);
+      downloadLink.download = f.emailId+'.zip';
+
+      // Append the link to the document and trigger the click event
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+
+      // Remove the link from the document
+      document.body.removeChild(downloadLink);
+    }
+    
+    };
+    webSocket.addEventListener("open", () => {
+      console.log("We are connected");
+    });
+    function sendMessage(event) {
+      var inputMessage = document.getElementById('message')
+      webSocket.send(inputMessage.value)
+      inputMessage.value = ""
+      event.preventDefault();
+    }
+
+    const myButton = document.getElementById('Id')
+    
+    
+    
+     function myFunction(button) {
+        alert("Button clicked!"+button.id);
+        let jsonData = {
+                              key1: 'download',
+                              key2:button.id
+                             };
+        webSocket.send(JSON.stringify(jsonData));
+        event.preventDefault();
+    }
+    
+    function remove(button)
+    {       // event.preventDefault();
+      var ki = document.getElementsByClassName(button.id);
+
+if (ki.length > 0) {
+                // Remove the first element with the specified class
+                ki[0].parentNode.removeChild(ki[0]);
+            } 
+        let jsonData = {
+                              key1: 'remove',
+                              key2: button.id
+                             };
+                    webSocket.send(JSON.stringify(jsonData));
+     // ko.removeChild(ki);
+    alert("remove is clicked"+button.id);
+    
+}
+ function handleClick(button) {
+            alert('Div clicked!');
+            // Add your logic or actions here
+        }
+        
+        
+        
+        
+        function handleImage() {
+      // Get the input element
+      var input = document.getElementById('imageInput');
+      
+      // Check if a file is selected
+      if (input.files && input.files[0]) {
+        // Get the selected file
+        var imageFile = input.files[0];
+
+        // You can do further processing with the file here
+        console.log('Selected image file:', imageFile);
+
+        // Optionally, display the selected image
+        displayImage(imageFile);
+      } else {
+        console.log('No image selected');
+      }
+    }
+
+    function displayImage(file) {
+      // Create a FileReader to read the file
+      var reader = new FileReader();
+
+      // Set up the FileReader onload event
+      reader.onload = function (e) {
+        // Create an image element
+        var img = document.createElement('img');
+        var cat_name=document.getElementById('category-name');
+        // Set the image source to the data URL
+        img.src = e.target.result;
+        let jsonData = {
+                              key1: 'upload',
+                              key2: img.src,
+                              key3:cat_name.value
+                             };
+        // Append the image to the body or another container
+        //document.body.appendChild(img);
+        cat_name.value="";
+                            webSocket.send(JSON.stringify(jsonData));
+      };
+
+      // Read the file as a data URL
+      reader.readAsDataURL(file);
+    }
+    function reloadPage() {
+            location.reload();
+        }
+        function category() {
+            // Get a reference to the popup element
+            var popup = document.getElementById('cat');
+            
+            // Display the popup
+            popup.style.display = 'block';
+        }
+        
+        function openPopup() {
+            // Get a reference to the popup element
+            var popup = document.getElementById('popup');
+            
+            // Display the popup
+            popup.style.display = 'block';
+        }
+
+        function closePopup() {
+            // Get a reference to the popup element
+            var popup = document.getElementById('popup');
+             var cat=document.getElementById('cat');
+            cat.style.display='none';
+            // Hide the popup
+            popup.style.display = 'none';
+        }
+        
+        
+        function submit() {
+            // Get a reference to the popup element
+
+            var cat=document.getElementById('popup');
+
+             var name=document.getElementById('category');
+            let jsonData = {
+                              key1: 'new-category',
+                              key2: name.value
+                             };
+           name.value="";
+           webSocket.send(JSON.stringify(jsonData));
+           console.log(jsonData);
+
+        }
+   
+   function p(value){
+  console.log(value);
+  
+
+        document.getElementById("modal").appendChild(document.getElementById(value));
+  /*if(value==="popup"){
+        document.getElementById("modal").appendChild(document.getElementById('upload'));
+        }
+  else if(value==="upload")
+  {        document.getElementById("modal").appendChild(document.getElementById('popup'));
+  }
+  else{return;}*/
+   
+    var body = document.body;
+    var modal = createModal(document.querySelector("#modal-1"));
+
+
+    modal.open(); 
+function createModal(container) {
+var content ;
+    content = container.querySelector(".modal-content");
+  var dialog = container.querySelector(".modal-dialog");
+  var polygon = container.querySelector(".modal-polygon");
+  var svg = container.querySelector(".modal-svg");
+var point1 = createPoint(45, 45);
+  var point2 = createPoint(55, 45);
+  var point3 = createPoint(55, 55);
+  var point4 = createPoint(45, 55);
+      
+  var animation = new TimelineMax({    
+      onReverseComplete: onReverseComplete,
+      onStart: onStart,
+      paused: true
+    })     
+    .to(point1, 0.3, {
+      x: 15,
+      y: 30,
+      ease: Power4.easeIn
+    }, 0)
+    .to(point4, 0.3, {
+      x: 5,
+      y: 80,
+      ease: Power2.easeIn
+    }, "-=0.1")
+    .to(point1, 0.3, {
+      x: 0,
+      y: 0,
+      ease: Power3.easeIn
+    })
+    .to(point2, 0.3, {
+      x: 100,
+      y: 0,
+      ease: Power2.easeIn
+    }, "-=0.2")
+    .to(point3, 0.3, {
+      x: 100,
+      y: 100,
+      ease: Power2.easeIn
+    })
+    .to(point4, 0.3, {
+      x: 0,
+      y: 100,
+      ease: Power2.easeIn
+    }, "-=0.1")  
+    .to(container, 1, {
+      autoAlpha: 1
+    }, 0)  
+    .to(content, 1, {
+      autoAlpha: 1
+    })
+  
+  var modalobj = {
+    animation: animation,
+    container: container,
+    content: content,
+    dialog: dialog,    
+    isOpen: false,
+    open: open,
+    close: close   
+
+  };
+  
+ 
+  body.removeChild(container);
+    
+  function onClick() {
+    if (event.target.closest('.modal-content')) {
+      return; // Do nothing, as the click was inside the modal content
+    }
+    if (modal.isOpen) {
+      close();
+    }
+  }
+  
+  function onStart() {
+    body.appendChild(container);
+    container.addEventListener("click", onClick);
+  }
+  
+  function onReverseComplete() {
+    container.removeEventListener("click", onClick);
+    body.removeChild(container);
+  }
+  
+  function open(a) {
+  console.log(a);
+
+    modal.isOpen = true;
+animation
+    .play()
+    .timeScale(2)
+    .eventCallback("onComplete", function () {
+      // Make the content visible after the animation completes
+      content.style.visibility = "visible";
+      content.style.opacity = 1;
+    });
+  }
+  
+  function close() {
+    modal.isOpen = false;
+    animation.reverse().timeScale(1.5);
+     content.style.visibility = "hidden";
+  content.style.opacity = 0;
+
+    content = null;
+   dialog = null;
+  polygon = null;
+   svg = null;
+    container=null;
+  }
+
+  function createPoint(x, y) {
+    var point = polygon.points.appendItem(svg.createSVGPoint());
+    point.x = x || 0;
+    point.y = y || 0;
+    return point;
+  }
+
+  return modalobj;
+}
+
+
+}
+  </script>
+  
+  </div>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'></script>
+</body>
+</html>
